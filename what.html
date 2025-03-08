@@ -239,7 +239,8 @@
         let slideIndex = 0;
         const slides = document.querySelector('.slides');
         const slideElements = document.querySelectorAll('.slide');
-
+        let autoSlideInterval;
+        
         function currentSlide(n) {
             slideIndex = n;
             updateSlider();
@@ -255,18 +256,23 @@
             updateSlider();
         }
 
-        // Auto slide every 10 seconds
-       let interval = setInterval(autoSlide, 10000);
+        // Start auto slide 
+      function startAutoSlide() {
+            autoSlideInterval = setInterval(autoSlide, 10000);
+        }
 
-    // Pause auto-slide on hover
-    document.querySelector('.slider').addEventListener("mouseenter", () => clearInterval(interval));
-    document.querySelector('.slider').addEventListener("mouseleave", () => interval = setInterval(autoSlide, 10000));
+    // Stop auto-slide
+    function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
 
-    // Optional: Keyboard Navigation
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "ArrowRight") nextSlide();
-        if (event.key === "ArrowLeft") prevSlide();
-    });
+        // Event listeners for hover
+        const slider = document.getElementById('slider');
+        slider.addEventListener('mouseenter', stopAutoSlide);
+        slider.addEventListener('mouseleave', startAutoSlide);
+
+        // Start auto slide on page load
+        startAutoSlide();
     </script>
 </body>
 </html>
