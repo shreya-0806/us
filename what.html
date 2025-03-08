@@ -256,7 +256,17 @@
         }
 
         // Auto slide every 10 seconds
-        setInterval(autoSlide, 10000);
+       let interval = setInterval(autoSlide, 10000);
+
+    // Pause auto-slide on hover
+    document.querySelector('.slider').addEventListener("mouseenter", () => clearInterval(interval));
+    document.querySelector('.slider').addEventListener("mouseleave", () => interval = setInterval(autoSlide, 10000));
+
+    // Optional: Keyboard Navigation
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowRight") nextSlide();
+        if (event.key === "ArrowLeft") prevSlide();
+    });
     </script>
 </body>
 </html>
