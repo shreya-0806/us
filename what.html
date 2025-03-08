@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        .slider {
+            width: 900px;
+            height: 600px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .slides {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            position: relative;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #f0f0f0;
+        }
+
+        .slide-caption {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .slide-container:hover .slide-caption {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .navigation-manual {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            bottom: 20px;
+            z-index: 10;
+        }
+
+        .manual-btn {
+            border: 2px solid #fff;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin: 0 5px;
+            background: transparent;
+        }
+
+        .manual-btn:hover {
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">
+                <div class="slide-container">
+                    <img src="SHIVAM.JPG" alt="Image 1">
+                    <div class="slide-caption">
+                        <h3>"Whispers of the Night: A Saree, a Motorcycle, and an Unspoken Love"</h3>
+                        <p>As the cool night breeze wrapped around us, I held onto you a little tighter, my saree flowing with the wind, wishing the road would never end—because every moment with you feels like a beautiful adventure I never want to stop, every mile we traveled together feeling like a perfect, unspoken love letter." 🌙🏍️💕✨</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-container">
+                    <img src="SHIVAM2.JPG" alt="Image 2">
+                    <div class="slide-caption">
+                        <h3>"First Embrace: When Your Arms Became My Home"</h3>
+                        <p>When you first picked me up in your arms, everything around us just... disappeared. Your warmth, your heartbeat - it was like I found my entire world right there, held safely against you.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-container">
+                    <img src="SHIVAM5.jpeg" alt="Image 3">
+                    <div class="slide-caption">
+                        <h3>"A Frame Full of Love and Stolen Heartbeats" 📸❤️✨</h3>
+                        <p>"When you called me closer for that photo, the way you looked at me, the way you smiled—it completely stole my heart. In that moment, I swear, I skipped a few beats, and all I could think was how lucky I am to be yours." ❤️📸✨</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-container">
+                    <img src="SHIVAM6.jpg" alt="Image 4">
+                    <div class="slide-caption">
+                        <h3>"Wrapped in Love: A Hug Captured Forever" 🤗❤️📸</h3>
+                        <p>I’ve realized that no matter what happens, my happiness will always begin and end with you. 💖</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-container">
+                    <img src="SHIVAM7.jpg" alt="Image 5">
+                    <div class="slide-caption">
+                        <h3>10001th time you make me yours 🤗❤️</h3>
+                        <p>"The day you proposed to me, even though I was already yours, felt like falling in love with you all over again—because in that moment, I realized that loving you will always feel new, magical, and forever worth saying 'yes' to." 💍❤️✨</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-container">
+                    <img src="SHIVAM10.jpg" alt="Image 4">
+                    <div class="slide-caption">
+                        <h3>"My Happiness Begins and Ends with You" 💖✨</h3>
+                        <p>I’ve realized that no matter what happens, I won’t ever be truly happy without you in my life.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-container">
+                    <img src="SHIVAM11.jpg" alt="Image 4">
+                    <div class="slide-caption">
+                        <h3>"Unyielding Desire ❤️🔥"</h3>
+                        <p>I don’t just love you; I crave you, I need you, and I never want to let you go.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-container">
+                    <img src="SHIVAM12.jpg" alt="Image 4">
+                    <div class="slide-caption">
+                        <h3>"Blessed Beginnings ✨❤️🙏"</h3>
+                        <p>"As we stepped into the temple hand in hand, it felt as if our love was being blessed by the universe itself, turning a simple moment into a beautiful, unforgettable memory." ❤️🙏✨</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-container">
+                    <img src="SHIVAM13.jpg" alt="Image 4">
+                    <div class="slide-caption">
+                        <h3>"Silent Confessions" ✨❤️</h3>
+                        <p>"My eyes speak everything; I feel like the luckiest person alive because I get to call you mine." ❤️ </p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-container">
+                    <img src="SHIVAM14.jpg" alt="Image 4">
+                    <div class="slide-caption">
+                        <h3>"Lost in Your Eyes, Addicted to Your Love" ❤️✨</h3>
+                        <p>"Your eyes pull me in like a beautiful mystery, your smile melts my heart in seconds, and your naughtiness keeps me hopelessly addicted to you—every bit of you is my favorite kind of love." ❤️✨</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-container">
+                    <img src="SHIVAM15.jpg" alt="Image 4">
+                    <div class="slide-caption">
+                        <h3>"Enchanting Love" ✨❤️</h3>
+                        <p>"Your love is the kind of magic that wraps around my heart, a spell I never want to lose."❤️✨</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-container">
+                    <img src="SHIVAM16.jpg" alt="Image 4">
+                    <div class="slide-caption">
+                        <h3>"Endless Devotion" ❤️✨</h3>
+                        <p>"I vow to love you fiercely, obsess over every little thing that makes you unique, and cherish you with all my heart, every single day."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-container">
+                    <img src="SHIVAM17.jpg" alt="Image 4">
+                    <div class="slide-caption">
+                        <h3>"प्रेम का पावन संगम" 💖🌊</h3>
+                        <p>"अगर तुम भागीरथ से चंचल हो, तो मैं अलकनंदा बनकर तुम्हारी शांति हूँ,
+                            तुम्हारे संग बहने को तैयार हूँ, तुम्हारी हर लहर में समाने को बेकरार हूँ।
+                            जब हमारा संगम होगा, तुम गंगा बनना, और मैं तुम्हारी घाट बन जाऊँगी,
+                            जहाँ तुम सुकून पाओ, वहीं मैं तुम्हारा आधार बनकर खड़ी रहूँगी,
+                            जहाँ तुम ठहरना चाहो, मैं वहीं तुम्हारा किनारा बनकर तुम्हारा इंतज़ार करूँगी।"💖😊</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-manual">
+            <button class="manual-btn" onclick="currentSlide(0)"></button>
+            <button class="manual-btn" onclick="currentSlide(1)"></button>
+            <button class="manual-btn" onclick="currentSlide(2)"></button>
+            <button class="manual-btn" onclick="currentSlide(3)"></button>
+            <button class="manual-btn" onclick="currentSlide(4)"></button>
+            <button class="manual-btn" onclick="currentSlide(5)"></button>
+            <button class="manual-btn" onclick="currentSlide(6)"></button>
+            <button class="manual-btn" onclick="currentSlide(7)"></button>
+            <button class="manual-btn" onclick="currentSlide(8)"></button>
+            <button class="manual-btn" onclick="currentSlide(9)"></button>
+            <button class="manual-btn" onclick="currentSlide(10)"></button>
+            <button class="manual-btn" onclick="currentSlide(11)"></button>
+            <button class="manual-btn" onclick="currentSlide(12)"></button>
+            <button class="manual-btn" onclick="currentSlide(13)"></button>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelector('.slides');
+        const slideElements = document.querySelectorAll('.slide');
+
+        function currentSlide(n) {
+            slideIndex = n;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+        }
+
+        // Optional: Auto sliding
+        function autoSlide() {
+            slideIndex = (slideIndex + 1) % slideElements.length;
+            updateSlider();
+        }
+
+        // Auto slide every 10 seconds
+        setInterval(autoSlide, 10000);
+    </script>
+</body>
+</html>
